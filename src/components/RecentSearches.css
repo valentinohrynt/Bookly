@@ -1,0 +1,46 @@
+.recent-searches {
+  padding: 4px 0 12px;
+}
+
+.recent-searches-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.recent-searches-icon {
+  font-size: 16px;
+  color: var(--ion-color-medium, #666);
+}
+
+.recent-searches-label span {
+  font-size: 13px;
+  color: var(--ion-color-medium, #666);
+  font-weight: 500;
+}
+
+.recent-searches-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ion-color-medium, #999);
+  font-size: 16px;
+  margin-left: auto;
+  padding: 2px;
+  border-radius: 50%;
+  transition: color 0.2s;
+}
+
+.recent-searches-clear:hover {
+  color: var(--ion-color-danger, #eb445a);
+}
+
+.recent-searches-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
