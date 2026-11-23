@@ -1,0 +1,7 @@
+{
+  "name": "Bookly",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
