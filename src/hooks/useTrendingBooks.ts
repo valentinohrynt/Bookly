@@ -8,6 +8,7 @@ interface TrendingResponse {
     title: string;
     author_name?: string[];
     first_publish_year?: number;
+    cover_i?: number;
     cover_id?: number;
     isbn?: string[];
   }[];
@@ -29,7 +30,7 @@ function mapTrendingWork(work: TrendingResponse['works'][number]): BookSearchRes
     title: work.title,
     author_name: work.author_name,
     first_publish_year: work.first_publish_year,
-    cover_i: work.cover_id,
+    cover_i: work.cover_i ?? work.cover_id,
     isbn: work.isbn,
   };
 }
@@ -82,7 +83,7 @@ export function useTrendingBooks(): UseTrendingBooksReturn {
 
     try {
       const response = await fetch(
-        `https://openlibrary.org/trending/now.json?limit=${SEARCH_RESULTS_LIMIT}`,
+        `https://openlibrary.org/trending/now.json?limit=${SEARCH_RESULTS_LIMIT}&fields=key,title,author_name,first_publish_year,cover_i,isbn`,
       );
       if (!response.ok) {
         throw new Error(`Failed to fetch trending: ${response.statusText}`);
